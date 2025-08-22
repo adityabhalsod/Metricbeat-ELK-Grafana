@@ -27,9 +27,8 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": ""
+        "uid": "P31C819B24CF3C3C7"
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -40,35 +39,17 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
-              "vis": false,
               "viz": false
             },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "show": "points"
           },
           "mappings": [],
-          "max": 1,
-          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -81,8 +62,7 @@
                 "value": 80
               }
             ]
-          },
-          "unit": "percentunit"
+          }
         },
         "overrides": []
       },
@@ -100,6 +80,8 @@
           "placement": "bottom",
           "showLegend": true
         },
+        "series": [],
+        "seriesMapping": "auto",
         "tooltip": {
           "mode": "single",
           "sort": "none"
@@ -114,17 +96,20 @@
               "field": "@timestamp",
               "id": "2",
               "settings": {
-                "interval": "auto"
+                "interval": "auto",
+                "min_doc_count": "0",
+                "timeZone": "utc",
+                "trimEdges": "0"
               },
               "type": "date_histogram"
             }
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": ""
+            "uid": "P31C819B24CF3C3C7"
           },
-          "index": "metricbeat-*",
           "hide": true,
+          "index": "metricbeat-*",
           "metrics": [
             {
               "field": "system.cpu.total.pct",
@@ -138,14 +123,13 @@
         }
       ],
       "title": "CPU Usage",
-      "type": "timeseries"
+      "type": "xychart"
     },
     {
       "datasource": {
         "type": "elasticsearch",
         "uid": ""
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -209,6 +193,7 @@
         "y": 0
       },
       "id": 3,
+      "index": "metricbeat-*",
       "options": {
         "legend": {
           "calcs": [],
@@ -260,7 +245,6 @@
         "type": "elasticsearch",
         "uid": ""
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -322,6 +306,7 @@
         "y": 8
       },
       "id": 4,
+      "index": "metricbeat-*",
       "options": {
         "legend": {
           "calcs": [],
@@ -401,7 +386,6 @@
         "type": "elasticsearch",
         "uid": ""
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -463,6 +447,7 @@
         "y": 8
       },
       "id": 5,
+      "index": "metricbeat-*",
       "options": {
         "legend": {
           "calcs": [],
@@ -514,7 +499,6 @@
         "type": "elasticsearch",
         "uid": ""
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -545,6 +529,7 @@
         "y": 16
       },
       "id": 6,
+      "index": "metricbeat-*",
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -596,9 +581,8 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": ""
+        "uid": "P31C819B24CF3C3C7"
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -634,9 +618,6 @@
       },
       "id": 7,
       "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -645,7 +626,8 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
       "pluginVersion": "9.4.7",
       "targets": [
@@ -663,7 +645,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": ""
+            "uid": "P31C819B24CF3C3C7"
           },
           "index": "metricbeat-*",
           "metrics": [
@@ -679,14 +661,13 @@
         }
       ],
       "title": "Load Average (1m)",
-      "type": "stat"
+      "type": "gauge"
     },
     {
       "datasource": {
         "type": "elasticsearch",
         "uid": ""
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -717,6 +698,7 @@
         "y": 16
       },
       "id": 8,
+      "index": "metricbeat-*",
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -770,7 +752,6 @@
         "type": "elasticsearch",
         "uid": ""
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -801,6 +782,7 @@
         "y": 16
       },
       "id": 9,
+      "index": "metricbeat-*",
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -854,7 +836,6 @@
         "type": "elasticsearch",
         "uid": ""
       },
-      "index": "metricbeat-*",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -879,6 +860,7 @@
         "y": 20
       },
       "id": 10,
+      "index": "metricbeat-*",
       "options": {
         "legend": {
           "displayMode": "table",
@@ -949,7 +931,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-  "uid": ""
+        "uid": ""
       },
       "fieldConfig": {
         "defaults": {
