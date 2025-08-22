@@ -1,0 +1,11 @@
+- module: system
+  metricsets:
+    - cpu
+    - memory
+    - network
+    - process
+    - process_summary
+    - filesystem
+  period: 10s
+  processes: ['.*']
+  enabled: true
